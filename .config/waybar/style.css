@@ -1,0 +1,212 @@
+@import '../../.cache/wal/colors-waybar.css';
+
+* {
+    font-family: "Robo Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 30px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+tooltip {
+    border-radius: 10px;
+    background-color: @foreground;
+    opacity:0.8;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @background;
+    font-weight:normal;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+#workspaces {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5px 2px 5px 2px;
+    border-radius: 15px;
+    font-weight: bold;
+    color: @background
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 5px;
+    border-radius: 30px;
+    background-color: @color1;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: @color2;
+    border-radius: 10px;
+    min-width: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @cursor;
+    background: @color12;
+    border-radius: 15px;
+}
+
+#custom-updates
+#custom-media,
+#custom-power,
+#custom-updates,
+#weatherandclock,
+#tray,
+#taskbar,
+#mode,
+#hardwarestats,
+#custom-notification,
+#settings,
+#mpd {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 6px 5px;
+    border-radius: 15px;
+}
+
+#clock {
+    margin: 6px 7px;
+    color: @color12;
+}
+
+#custom-notification {
+    padding: 0px 15px;
+    color: @color4;
+    font-family: "NotoSansMono"
+}
+
+#temperature {
+    margin: 6px 5px;
+}
+
+#custom-power {
+    border-radius: 26px;
+    color: @color7;
+    min-width:  50px
+}
+
+#hardwarestats {
+    color: @color1;
+    padding: 0px 0px 0px 0px
+}
+
+#battery.charging, #battery.plugged {
+    color: #226131;
+}
+
+@keyframes blink {
+    to {
+        color: #f91616;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @color1;
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#settings {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: @color12;
+}
+
+#bluetooth, network, pulseaudio {
+    margin: 0px 5px;
+    padding: 0px 0px 0px 0px
+}
+
+#custom-updates {
+    color: @color7;
+    padding: 7px
+}
+
+#network.disconnected {
+    color: #f53c3c;
+    border-radius: 26px;
+}
+
+#temperature.critical {
+    color: #eb4d4b;
+}
+
+#taskbar.empty {
+    background: transparent;
+    border: none;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 10px;
+    background: transparent;
+    padding: 0px 8px 0px 5px;
+}
+
+#tray {
+    padding: 0px 8px 0px 5px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+    border-radius: 26px;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
