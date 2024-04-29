@@ -9,9 +9,18 @@
     "hyprland/workspaces": {
         "active-only": "false",
         "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+        },
         "all-outputs": true,
         "persistent-workspaces": {
-                    "*": 5 
+                    "*": 7
             }
     },
 
@@ -130,7 +139,6 @@
         "format": "     {usage}% /"
     },
     "network": {
-        "interface": "wlan0",
         "format": "  {ifname} /",
         "format-wifi": "  󰤨 /",
         "format-ethernet": "  {ipaddr}/{cidr} 󰊗 /",

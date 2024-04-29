@@ -1,4 +1,7 @@
-@import '../../.cache/wal/colors-waybar.css';
+@import "macchiato.css";
+
+* { min-height: 15px; } 
+
 
 * {
     font-family: "Robo Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -7,7 +10,7 @@
 }
 
 window#waybar {
-    background-color: @transparent;
+    background-color: transparent;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 30px;
@@ -26,7 +29,7 @@ tooltip {
 }
 
 tooltip label {
-    color: @background;
+    color: @overlay1;
     font-weight:normal;
 }
 
@@ -40,16 +43,14 @@ window#waybar.chromium {
 }
 
 #workspaces {
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 5px 2px 5px 2px;
+    background-color: @base;
     border-radius: 15px;
-    font-weight: bold;
-    color: @background
+    color: @text;
 }
 
 #workspaces button {
     padding: 0px 5px;
-    margin: 4px 5px;
+    margin: 6px 5px;
     border-radius: 30px;
     background-color: @color1;
     transition: all 0.3s ease-in-out;
@@ -79,20 +80,21 @@ window#waybar.chromium {
 #hardwarestats,
 #custom-notification,
 #settings,
+#workspaces,
 #mpd {
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 6px 5px;
-    border-radius: 15px;
+    background-color: @base;
+    color: @text;
+    border: 2px solid @subtext2;
+    margin: 0px 5px;
+    border-radius: 11px;
 }
 
 #clock {
     margin: 6px 7px;
-    color: @color12;
 }
 
 #custom-notification {
     padding: 0px 15px;
-    color: @color4;
     font-family: "NotoSansMono"
 }
 
@@ -102,12 +104,10 @@ window#waybar.chromium {
 
 #custom-power {
     border-radius: 26px;
-    color: @color7;
     min-width:  50px
 }
 
 #hardwarestats {
-    color: @color1;
     padding: 0px 0px 0px 0px
 }
 
@@ -133,11 +133,6 @@ window#waybar.chromium {
 
 label:focus {
     background-color: #000000;
-}
-
-#settings {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: @color12;
 }
 
 #bluetooth, network, pulseaudio {

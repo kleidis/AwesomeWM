@@ -24,12 +24,13 @@ require('packer').startup(function()
     -- Packer plugins
     use("petertriho/nvim-scrollbar")
     use 'akinsho/nvim-bufferline.lua'
-    use 'folke/tokyonight.nvim' 
+    use { "catppuccin/nvim", as = "catppuccin" }
 end)
+
 
 -- Set up the color scheme
 vim.g.vscode_style = "dark"  -- Set the style to dark
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd.colorscheme "catppuccin"
 
 --Vscode theme config
 local function open_nvim_tree(data)

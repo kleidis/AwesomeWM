@@ -1,3 +1,0 @@
-TerminalEmulator=alacritty
-TerminalEmulatorDismissed=true
-X-XFCE-CommandsWithParameter=alacritty -e "%s"
