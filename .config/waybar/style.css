@@ -57,15 +57,16 @@ window#waybar.chromium {
 }
 
 #workspaces button.active {
-    background: @color2;
+    background: @overlay0;
+    color: @surface0;
     border-radius: 10px;
     min-width: 30px;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
-    color: @cursor;
-    background: @color12;
+    color: @surface1;
+    background: @overlay2;
     border-radius: 15px;
 }
 
@@ -75,7 +76,6 @@ window#waybar.chromium {
 #custom-updates,
 #weatherandclock,
 #tray,
-#taskbar,
 #mode,
 #hardwarestats,
 #custom-notification,
@@ -86,7 +86,7 @@ window#waybar.chromium {
     color: @text;
     border: 2px solid @subtext2;
     margin: 0px 5px;
-    border-radius: 11px;
+    border-radius: 9px;
 }
 
 #clock {
@@ -94,6 +94,7 @@ window#waybar.chromium {
 }
 
 #custom-notification {
+    color: @sapphire;
     padding: 0px 15px;
     font-family: "NotoSansMono"
 }
@@ -103,16 +104,38 @@ window#waybar.chromium {
 }
 
 #custom-power {
+    color: @red;
     border-radius: 26px;
     min-width:  50px
 }
+
+#taskbar {
+    background-color: @base;
+    color: @text;
+    border: none;
+    margin: 0px 5px;
+    border-radius: 11px;
+}
+
 
 #hardwarestats {
     padding: 0px 0px 0px 0px
 }
 
+#network {
+    color: @peach;
+}
+
+#bluetooth {
+    color: @blue;
+}
+
+#pulseaudio {
+    color: @mauve;
+}
+
 #battery.charging, #battery.plugged {
-    color: #226131;
+    color: @green;
 }
 
 @keyframes blink {
@@ -151,12 +174,7 @@ label:focus {
 }
 
 #temperature.critical {
-    color: #eb4d4b;
-}
-
-#taskbar.empty {
-    background: transparent;
-    border: none;
+    color: @red;
 }
 
 #taskbar button {
