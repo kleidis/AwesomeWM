@@ -1,21 +1,73 @@
 #!/bin/bash
 
-# Update Fedora
-echo "Updating Fedora..."
-sudo dnf update -y
+# Define packages to be installed with pacman
+pacman_packages=(
+    stow
+    xdg-desktop-portal-gtk
+    nemo
+    alacritty
+    zsh
+    power-profiles-daemon
+    waybar
+    gnome-disk-utility
+    brightnessctl
+    flatpak
+    gvfs
+    swaybg 
+    gvfs-mtp
+    xdg-user-dirs
+    network-manager-applet
+    blueman
+    bluez-utils
+    eza
+    bluez
+    qt5ct
+    qt6ct
+    grim
+    slurp
+    udiskie
+    kvantum
+    kvantum-qt5 
+    cliphist
+    pamixer
+    playerctl
+    papirus-icon-theme
+    pavucontrol
+)
 
-# Enable multiple COPR repositories
-echo "Enabling COPR repositories..."
-sudo dnf copr enable reikreider/SwayNotificationCenter -y
-sudo dnf copr enable erikreider/SwayNotificationCenter -y
+# Define packages to be installed with yay
+yay_packages=(
+    wlogout
+    waybar-module-pacman-updates-git
+    swaync
+    hyprlock-git
+    rofi-lbonn-wayland-git
+    pyprland
+    hypridle-git
+    pfetch
+    xfce-polkit
+)
+
+# Install packages with pacman
+for pkg in "${pacman_packages[@]}"; do
+    echo "Installing $pkg with pacman..."
+    sudo pacman -S --noconfirm $pkg
+    sleep 2 # Delay for readability and control
+done
+
+# Install packages with yay
+for pkg in "${yay_packages[@]}"; do
+    echo "Installing $pkg with yay..."
+    yay -S --noconfirm $pkg
+    sleep 2 # Delay for readability and control
+done
+
+echo "All packages have been installed."
+
 
 # Run stow to sync dotfiles
 echo "Syncing dotfiles with stow..."
 stow .
-
-# Install multiple packages
-echo "Installing packages..."
-sudo dnf install hyprland hyprlock hypridle pyprland stow xdg-desktop-portal-gtk xdg-desktop-portal-hyprland nemo alacritty zsh power-profiles-daemon waybar gnome-disk-utility brightnessctl flatpak gvfs swaybg gvfs-mtp xdg-user-dirs network-manager-applet blueman bluez-tools eza bluez qt5ct qt6ct grim slurp udiskie kvantum-qt6 cliphist pamixer playerctl papirus-icon-theme pavucontrol wlogout SwayNotificationCenter xfce-polkit btop goverlay rofi-wayland sddm neofetch -y
 
 # Start daemons
 echo "Starting services..."
@@ -30,9 +82,8 @@ sudo systemctl set-default graphical.target
 echo "Default terminal as Alacritty..."
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
-
 # Uninstall useless packages
-sudo dnf remove wofi kitty -y 
+sudo pacman -Rsn kitty dunst dolphin vim wofi
 
 # Update the user directories
 echo "Updating user directories..."

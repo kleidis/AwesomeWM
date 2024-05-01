@@ -1,6 +1,4 @@
-## Hyprland on Fedora dotfiles + an install script
-
-![image](https://github.com/kleidis/hyprland-dotfiles/assets/167202775/47530966-128b-45e8-99b3-94fd20335bfb)
+## Hyprland on Arch dotfiles + an install script
 
 ## How to install? 
 
