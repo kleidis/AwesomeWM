@@ -27,3 +27,5 @@
 /.config/dconf
 /.config/dconf
 /.config/dconf
+.config/qt6ct/qt6ct.conf
+.config/dconf/user

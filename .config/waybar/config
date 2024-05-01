@@ -5,7 +5,7 @@
     "margin-bottom": 0,
     "margin-left": 10,
     "margin-right": 5,
-    "modules-left": ["custom/power" ,"custom/notification", "hyprland/workspaces", "wlr/taskbar"],
+    "modules-left": ["custom/power" ,"custom/notification", "hyprland/workspaces"],
     "hyprland/workspaces": {
         "active-only": "false",
         "format": "{icon}",
