@@ -15,7 +15,7 @@ stow .
 
 # Install multiple packages
 echo "Installing packages..."
-sudo dnf install hyprland hyprlock hypridle pyprland stow xdg-desktop-portal-gtk xdg-desktop-portal-hyprland nemo alacritty zsh power-profiles-daemon waybar gnome-disk-utility brightnessctl flatpak gvfs swaybg gvfs-mtp xdg-user-dirs network-manager-applet blueman bluez-tools eza bluez qt5ct qt6ct grim slurp udiskie kvantum-qt6 cliphist pamixer playerctl papirus-icon-theme pavucontrol wlogout SwayNotificationCenter xfce-polkit gnome-software btop goverlay rofi-wayland sddm neofetch -y
+sudo dnf install hyprland hyprlock hypridle pyprland stow xdg-desktop-portal-gtk xdg-desktop-portal-hyprland nemo alacritty zsh power-profiles-daemon waybar gnome-disk-utility brightnessctl flatpak gvfs swaybg gvfs-mtp xdg-user-dirs network-manager-applet blueman bluez-tools eza bluez qt5ct qt6ct grim slurp udiskie kvantum-qt6 cliphist pamixer playerctl papirus-icon-theme pavucontrol wlogout SwayNotificationCenter xfce-polkit btop goverlay rofi-wayland sddm neofetch -y
 
 # Start daemons
 echo "Starting services..."
