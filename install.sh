@@ -102,8 +102,8 @@ flatpak install org.kde.KStyle.Kvantum/x86_64/5.15-22.08 org.kde.KStyle.Kvantum/
 echo "Changing shell to ZSH..."
 chsh -s /bin/zsh
 
-# Get the username
-username=$(logname)
+# Make SDDM conf 
+sudo touch /etc/sddm.conf 
 
 # Create a backup of the SDDM configuration file
 echo "Creating a backup of the SDDM configuration file..."
