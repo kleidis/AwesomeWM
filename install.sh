@@ -46,6 +46,7 @@ yay_packages=(
     hypridle-git
     pfetch
     xfce-polkit
+    waypaper-git
 )
 
 # Install packages with pacman
