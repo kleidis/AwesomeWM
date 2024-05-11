@@ -36,6 +36,7 @@ pacman_packages=(
     playerctl
     papirus-icon-theme
     pavucontrol
+    gnome-keyring
 )
 
 # Define packages to be installed with yay
