@@ -37,18 +37,19 @@ pacman_packages=(
     papirus-icon-theme
     pavucontrol
     gnome-keyring
+    swaync
+    rofi-wayland
+    fastfetch
+    gnome-software
 )
 
 # Define packages to be installed with yay
 yay_packages=(
     wlogout
     waybar-module-pacman-updates-git
-    swaync
     hyprlock-git
-    rofi-lbonn-wayland-git
     pyprland
     hypridle-git
-    pfetch
     xfce-polkit
     waypaper-git
     hyprshot-git
@@ -70,6 +71,10 @@ done
 
 echo "All packages have been installed."
 
+
+# Make .local if it doesnt exist so stow doesnt symlink the entire .local folder
+mkdir -p ~/.local
+mkdir ~/.local/share
 
 # Run stow to sync dotfiles
 echo "Syncing dotfiles with stow..."
