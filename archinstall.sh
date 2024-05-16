@@ -5,15 +5,17 @@ pacman_packages=(
     stow
     xdg-desktop-portal-gtk
     nemo
+    picom
+    flameshot
+    xclip
+    polybar
     alacritty
     zsh
     power-profiles-daemon
-    waybar
     gnome-disk-utility
     brightnessctl
     flatpak
     gvfs
-    swaybg 
     gvfs-mtp
     xdg-user-dirs
     network-manager-applet
@@ -37,22 +39,16 @@ pacman_packages=(
     papirus-icon-theme
     pavucontrol
     gnome-keyring
-    swaync
-    rofi-wayland
+    rofi
     fastfetch
     gnome-software
 )
 
 # Define packages to be installed with yay
 yay_packages=(
-    wlogout
-    waybar-module-pacman-updates-git
-    hyprlock-git
-    pyprland
-    hypridle-git
     xfce-polkit
-    waypaper-git
-    hyprshot-git
+    i3lock-fancy-git
+    rofi-greenclip
 )
 
 # Install packages with pacman
@@ -94,7 +90,7 @@ echo "Default terminal as Alacritty..."
 gsettings set org.cinnamon.desktop.default-applications.terminal exec alacritty
 
 # Uninstall useless packages
-sudo pacman -Rsn kitty dunst dolphin vim wofi
+sudo pacman -Rsn xterm vim
 
 # Update the user directories
 echo "Updating user directories..."
