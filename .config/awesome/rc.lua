@@ -98,11 +98,11 @@ beautiful.master_width_factor = 0.58
 awful.spawn.with_shell("~/.config/awesome/polybar.sh")
 
 
-
 -- Function to center and resize a floating window
 local function center_floating_client(c)
-    -- Check if the client is floating and not a special class, and also ensure it's not fullscreen
-    if c.floating and c.class ~= "spad" and not c.fullscreen then
+    -- Check if the client is floating, not a special class, not fullscreen, and is resizable
+    if c.floating and c.class ~= "spad" and not c.fullscreen and 
+       (c.size_hints.min_width ~= c.size_hints.max_width or c.size_hints.min_height ~= c.size_hints.max_height) then
         -- Set the size of the floating window
         local width = 1200 -- adjust width
         local height = 760 -- adjust height
@@ -112,8 +112,11 @@ local function center_floating_client(c)
         local x = screen_geometry.x + (screen_geometry.width - width) / 2
         local y = screen_geometry.y + (screen_geometry.height - height) / 2
 
-        -- Apply size and position
-        c:geometry({ x = x, y = y, width = width, height = height })
+        -- Check if the window is already centered to avoid unnecessary adjustments
+        if c.x ~= x or c.y ~= y then
+            -- Apply size and position
+            c:geometry({ x = x, y = y, width = width, height = height })
+        end
     end
 end
 
@@ -574,6 +577,7 @@ awful.rules.rules = {
 
     --My workspace rules
 
+        
     { rule = { class = "Polybar" },
       properties = { border_width = 0 } },
 
