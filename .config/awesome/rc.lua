@@ -101,7 +101,7 @@ awful.spawn.with_shell("~/.config/awesome/polybar.sh")
 -- Function to center and resize a floating window
 local function center_floating_client(c)
     -- Check if the client is floating, not a special class, not fullscreen, and is resizable
-    if c.floating and c.class ~= "spad" and not c.fullscreen and 
+    if c.floating and c.class ~= "spad" and not c.fullscreen and
        (c.size_hints.min_width ~= c.size_hints.max_width or c.size_hints.min_height ~= c.size_hints.max_height) then
         -- Set the size of the floating window
         local width = 1200 -- adjust width
@@ -321,7 +321,7 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back", group = "client"}),
-    
+
     -- My Keybinds
 
     awful.key({ }, "Print", function () awful.spawn("flameshot gui") end,
@@ -364,7 +364,7 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey }, "r", function() awful.spawn.with_shell("rofi -show drun") end,
               {description = "Rofi run launcher", group = "launcher"}),
-              
+
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey,           }, "m", awesome.restart,
@@ -577,7 +577,7 @@ awful.rules.rules = {
 
     --My workspace rules
 
-        
+
     { rule = { class = "Polybar" },
       properties = { border_width = 0 } },
 
@@ -594,7 +594,7 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "4" } },
 
     { rule = { class = "Cursor" },
-      properties = { screen = 1, tag = "4" } },  
+      properties = { screen = 1, tag = "4" } },
 
     { rule = { class = "discord" },
       properties = { screen = 1, tag = "5" } },
@@ -605,20 +605,27 @@ awful.rules.rules = {
     { rule = { class = "steam" },
       properties = { screen = 1, tag = "7" } },
 
-    { rule = { class = "mailspring" },
-      properties = { screen = 1, tag = "8" } },
+    { rule = { class = "Mailspring" },
+      properties = { floating = true, tag = "8" } },
 
     { rule = { class = "spad" },
       properties = { screen = 1, tag = "nil", autostart=false } },
 
-    { rule = { name = "All Files" }, 
+    { rule = { name = "All Files" },
       properties = { screen = 1, tag = "nil" } },
-    
-    { rule = { name = "Authentication required" }, 
+
+    { rule = { class = "PeaZip" },
+      properties = { floating = true, tag = "nil" } },
+
+      { rule = { class = "qView" },
+      properties = { floating = true, tag = "nil" } },
+
+
+    { rule = { name = "Authentication required" },
       properties = { screen = 1, tag = "nil", ontop = true,
-                     x=760, y=450, width = 400, height = 200, centered = true } },  
+                     x=760, y=450, width = 400, height = 200, centered = true } },
 }
-    
+
 
 -- }}}
 
@@ -635,7 +642,7 @@ end)
 client.connect_signal("manage", function(c)
     if not awesome.startup then
         awful.client.setslave(c)
-        
+
     end
 end)
 
