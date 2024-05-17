@@ -97,7 +97,8 @@ echo "Updating user directories..."
 xdg-user-dirs-update
 
 # Use the Catppucin theme for flatpak
-echo "Configuring flatpak to use the pywal GTK theme..."
+echo "Configuring flatpak to use the catppuccin GTK theme..."
+sudo flatpak override --env=GTK_THEME=Catppuccin-Macchiato-Standard-Blue-Dark
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 sudo flatpak override --filesystem=xdg-config/gtk-3.0
 sudo flatpak override --filesystem=xdg-config/Kvantum:ro
