@@ -23,7 +23,7 @@ pacman_packages=(
     bluez-utils
     eza
     bluez
-    qt6-svg 
+    qt6-svg
     qt6-declarative
     ttf-font-awesome
     qt5ct
@@ -32,7 +32,7 @@ pacman_packages=(
     slurp
     udiskie
     kvantum
-    kvantum-qt5 
+    kvantum-qt5
     cliphist
     pamixer
     playerctl
@@ -96,9 +96,16 @@ sudo pacman -Rsn xterm vim
 echo "Updating user directories..."
 xdg-user-dirs-update
 
-# Use the Catppucin theme for flatpak
+# Use the Catppucin theme for flatpak and GTK4
 echo "Configuring flatpak to use the catppuccin GTK theme..."
-sudo flatpak override --env=GTK_THEME=Catppuccin-Macchiato-Standard-Blue-Dark
+mkdir -p ~/.config/gtk-4.0
+ln -s  ~/.themes/Catppuccin-Macchiato-Standard-Teal-Dark/gtk-4.0/assets ~/.config/gtk-4.0
+ln -s ~/.themes/Catppuccin-Macchiato-Standard-Teal-Dark/gtk-4.0/gtk.css ~/.config/gtk-4.0/gtk.css
+ln -s ~/.themes/Catppuccin-Macchiato-Standard-Teal-Darkgtk-4.0/gtk-dark.css ~/.config/gtk-4.0/gtk-dark.css
+
+sudo flatpak override --env=GTK_THEME=Catppuccin-Macchiato-Standard-Teal-Dark
+
+sudo flatpak override --filesystem=~/.themes
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 sudo flatpak override --filesystem=xdg-config/gtk-3.0
 sudo flatpak override --filesystem=xdg-config/Kvantum:ro
@@ -109,8 +116,8 @@ flatpak install org.kde.KStyle.Kvantum/x86_64/5.15-22.08 org.kde.KStyle.Kvantum/
 echo "Changing shell to ZSH..."
 chsh -s /bin/zsh
 
-# Make SDDM conf 
-sudo touch /etc/sddm.conf 
+# Make SDDM conf
+sudo touch /etc/sddm.conf
 
 # Create a backup of the SDDM configuration file
 echo "Creating a backup of the SDDM configuration file..."
