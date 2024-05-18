@@ -100,13 +100,21 @@ awful.spawn.with_shell("~/.config/awesome/polybar.sh")
 
 -- Function to center and resize a floating window
 local function center_floating_client(c)
-    -- Check if the client is floating, not a special class, not fullscreen, and is resizable
-    if c.floating and c.class ~= "spad" and not c.fullscreen and
-       (c.size_hints.min_width ~= c.size_hints.max_width or c.size_hints.min_height ~= c.size_hints.max_height) then
-        -- Set the size of the floating window
-        local width = 1200 -- adjust width
-        local height = 760 -- adjust height
+    -- Check if the client is floating, not a special class, not fullscreen
+    if c.floating and c.class ~= "spad" and not c.fullscreen then
+        local width, height
         local screen_geometry = c.screen.workarea
+
+        -- Determine if the window can be resized
+        if c.size_hints.min_width == c.size_hints.max_width and c.size_hints.min_height == c.size_hints.max_height then
+            -- Window cannot be resized, use its current size
+            width = c.width
+            height = c.height
+        else
+            -- Window can be resized, set a custom size
+            width = 1200 -- adjust width
+            height = 760 -- adjust height
+        end
 
         -- Calculate position to center the window
         local x = screen_geometry.x + (screen_geometry.width - width) / 2
@@ -119,6 +127,7 @@ local function center_floating_client(c)
         end
     end
 end
+
 
 -- Connect this function to the client's property change signal
 client.connect_signal("property::floating", center_floating_client)
