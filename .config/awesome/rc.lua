@@ -328,8 +328,8 @@ globalkeys = gears.table.join(
               {description = "capture screen with flameshot", group = "screenshot"}),
     awful.key({ modkey }, "a", function () my_scratchpad:toggle() end,
         {description = "toggle scratchpad", group = "custom"}),
-    awful.key({ modkey }, "e", function () awful.spawn("nemo") end,
-              {description = "open Nemo file manager", group = "launcher"}),
+    awful.key({ modkey }, "e", function () awful.spawn("Thunar") end,
+              {description = "open Thunar file manager", group = "launcher"}),
     awful.key({ modkey }, "c", function () awful.spawn("code") end,
               {description = "open VS Code", group = "launcher"}),
     awful.key({ modkey }, "f", function () awful.spawn("thorium-browser") end,
@@ -584,7 +584,7 @@ awful.rules.rules = {
     { rule = { },
       properties = { screen = 1, tag = "1" } },
 
-    { rule = { class = "Nemo" },
+    { rule = { class = "Thunar" },
       properties = { screen = 1, tag = "2" } },
 
     { rule = { class = "Thorium-browser" },
