@@ -632,6 +632,18 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 
+client.connect_signal("request::activate", function(c, context, hints)
+    if context ~= "ewmh" then return end
+    if not c:isvisible() then
+        local t = c.first_tag
+        if t then
+            t:view_only()
+        end
+    end
+    client.focus = c
+    c:raise()
+end)
+
 -- Ensure the master window remains master when a new client is launched
 client.connect_signal("manage", function(c)
     c.shape = function(cr, w, h)
