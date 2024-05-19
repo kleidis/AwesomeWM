@@ -333,6 +333,8 @@ globalkeys = gears.table.join(
 
     -- My Keybinds
 
+    awful.key({ modkey, "Shift" }, "l", function () awful.spawn("i3lock-fancy") end,
+              {description = "lock screen with i3lock-fancy", group = "custom"}),
     awful.key({ }, "Print", function () awful.spawn("flameshot gui") end,
               {description = "capture screen with flameshot", group = "screenshot"}),
     awful.key({ modkey }, "a", function () my_scratchpad:toggle() end,
