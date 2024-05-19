@@ -1,62 +1,55 @@
 #!/bin/bash
 
 # Define packages to be installed with pacman
-pacman_packages=(
-    stow
-    xdg-desktop-portal-gtk
-    thunar
-    picom
-    flameshot
-    xclip
-    polybar
-    alacritty
-    zsh
-    power-profiles-daemon
-    gnome-disk-utility
-    brightnessctl
-    flatpak
-    gvfs
-    gvfs-mtp
-    xdg-user-dirs
-    network-manager-applet
-    blueman
-    bluez-utils
-    eza
-    bluez
-    qt6-svg
-    qt6-declarative
-    ttf-font-awesome
-    qt5ct
-    qt6ct
-    grim
-    slurp
-    udiskie
-    kvantum
-    kvantum-qt5
-    cliphist
-    pamixer
-    playerctl
-    papirus-icon-theme
-    pavucontrol
-    gnome-keyring
-    rofi
-    fastfetch
-    gnome-software
-)
-
-# Define packages to be installed with yay
-yay_packages=(
-    xfce-polkit
-    i3lock-fancy-git
-    rofi-greenclip
-)
-
 # Install packages with pacman
-for pkg in "${pacman_packages[@]}"; do
-    echo "Installing $pkg with pacman..."
-    sudo pacman -S --noconfirm $pkg
-    sleep 2 # Delay for readability and control
-done
+sudo pacman -S --noconfirm \
+    stow \
+    xdg-desktop-portal-gtk \
+    thunar \
+    picom \
+    flameshot \
+    xclip \
+    polybar \
+    alacritty \
+    zsh \
+    power-profiles-daemon \
+    gnome-disk-utility \
+    brightnessctl \
+    flatpak \
+    gvfs \
+    gvfs-mtp \
+    xdg-user-dirs \
+    network-manager-applet \
+    blueman \
+    bluez-utils \
+    eza \
+    bluez \
+    qt6-svg \
+    qt6-declarative \
+    ttf-font-awesome \
+    qt5ct \
+    qt6ct \
+    grim \
+    slurp \
+    udiskie \
+    kvantum \
+    kvantum-qt5 \
+    cliphist \
+    pamixer \
+    playerctl \
+    pavucontrol \
+    gnome-keyring \
+    rofi \
+    fastfetch \
+    gnome-software \
+    amd-ucode \
+    xf86-video-amdgpu
+
+# Install packages with yay
+yay -S --noconfirm \
+    xfce-polkit \
+    i3lock-fancy-git \
+    rofi-greenclip
 
 # Install packages with yay
 for pkg in "${yay_packages[@]}"; do
