@@ -631,8 +631,10 @@ awful.rules.rules = {
       { rule = { class = "qView" },
       properties = { floating = true, tag = "nil" } },
 
+      { rule = { class = "mpv" },
+      properties = { floating = true, tag = "nil" } },
 
-    { rule = { name = "Authentication required" },
+      { rule = { name = "Authentication required" },
       properties = { screen = 1, tag = "nil", ontop = true,
                      x=760, y=450, width = 400, height = 200, centered = true } },
 }
