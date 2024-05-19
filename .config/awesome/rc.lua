@@ -139,7 +139,7 @@ local my_scratchpad = bling.module.scratchpad:new({
     sticky = false,                      -- whether the scratchpad should stick to all tags
     autoclose = false,                   -- automatically close the scratchpad when losing focus
     floating = true,                    -- make the window floating
-    geometry = {x=560, y=55, height=500, width=800, centered=true},  -- geometry of the scratchpad window, centered
+    geometry = {x=560, y=65, height=500, width=800, centered=true},  -- geometry of the scratchpad window, centered
     reapply = true,                     -- reapply geometry when the scratchpad is shown
     autostart = false,
     dont_focus_before_close = false     -- focus the scratchpad before closing it
