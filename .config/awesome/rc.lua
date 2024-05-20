@@ -621,6 +621,9 @@ awful.rules.rules = {
     { rule = { class = "Mailspring" },
       properties = { floating = true, tag = "8" } },
 
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = "9" } },
+
     { rule = { class = "spad" },
       properties = { screen = 1, tag = "nil", autostart=false } },
 
