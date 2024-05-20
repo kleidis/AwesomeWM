@@ -114,3 +114,5 @@ export PATH="$PATH:/home/kleidis/.local/bin"
 
 eval "$(zoxide init zsh)"
 
+
+export PATH=$PATH:/home/kleidis/.spicetify
