@@ -48,7 +48,8 @@ sudo pacman -S --noconfirm \
 # Install packages with yay
 yay -S --noconfirm \
     xfce-polkit \
-    rofi-greenclip
+    rofi-greenclip \
+    waypaper-git
 
 # Install packages with yay
 for pkg in "${yay_packages[@]}"; do
