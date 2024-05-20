@@ -707,4 +707,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 client.connect_signal("property::floating", center_floating_client)
 
 
+client.connect_signal("property::minimized", function(c)
+    c.minimized = false
+end)
 
+client.connect_signal("property::floating", function(c)
+    if not c.fullscreen then  -- Check if the client is not in fullscreen mode
+        c.ontop = c.floating
+    end
+end)
