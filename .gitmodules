@@ -1,0 +1,6 @@
+[submodule "neovim"]
+	path = .config/nvim
+	url = https://github.com/kleidis/nvim
+[submodule "Wallpapers"]
+	path = Wallpapers
+	url = https://github.com/kleidis/Wallpapers.git
