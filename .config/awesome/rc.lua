@@ -337,6 +337,14 @@ globalkeys = gears.table.join(
 
     -- My Keybinds
 
+    -- Toggle a window to maximize over all windows on a tag
+    awful.key({ modkey, "Control" }, "p", function ()
+        local c = client.focus
+        if c then
+            c.maximized = not c.maximized  -- Toggle maximization state
+            c:raise()  -- Bring the window to the front
+        end
+    end, {description = "toggle maximize over all windows", group = "client"}),
     awful.key({ modkey }, "g", function () awful.spawn("github-desktop") end,
               {description = "open Github Desktop", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "l", function () awful.spawn("i3lock-fancy") end,
@@ -631,9 +639,12 @@ awful.rules.rules = {
     { rule = { class = "spad" },
       properties = { screen = 1, tag = "nil", autostart=false } },
 
+    { rule = { instance = "xdg-desktop-portal-gtk" },
+      properties = { floating = true, tag = "nil" } },
+
     { rule = { name = "All Files" },
       properties = { screen = 1, tag = "nil" } },
-
+      
     { rule = { class = "PeaZip" },
       properties = { floating = true, tag = "nil" } },
 
