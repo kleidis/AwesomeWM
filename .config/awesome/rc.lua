@@ -337,6 +337,10 @@ globalkeys = gears.table.join(
 
     -- My Keybinds
 
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("brightnessctl s +5%") end,
+              {description = "increase brightness", group = "custom"}),
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("brightnessctl s 5%-") end,
+              {description = "decrease brightness", group = "custom"}),
     -- Toggle a window to maximize over all windows on a tag
     awful.key({ modkey, "Control" }, "p", function ()
         local c = client.focus
