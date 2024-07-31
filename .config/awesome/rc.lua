@@ -357,6 +357,8 @@ globalkeys = gears.table.join(
               {description = "capture screen with flameshot", group = "screenshot"}),
     awful.key({ modkey }, "a", function () my_scratchpad:toggle() end,
         {description = "toggle scratchpad", group = "custom"}),
+    awful.key({ modkey }, "`", function () local screen = awful.screen.focused() local tag = screen.tags[6] if tag then tag:view_only() end end,
+              {description = "view workspace 6", group = "workspace"}),
     awful.key({ modkey }, "e", function () awful.spawn("Thunar") end,
               {description = "open Thunar file manager", group = "launcher"}),
     awful.key({ modkey }, "c", function () awful.spawn("code") end,
@@ -611,7 +613,7 @@ awful.rules.rules = {
       properties = { border_width = 0 } },
 
     { rule = { },
-      properties = { screen = 1, tag = "1" } },
+      properties = { screen = 1, tag = "6" } },
 
     { rule = { class = "Thunar" },
       properties = { screen = 1, tag = "2" } },
@@ -629,7 +631,7 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "5" } },
 
     { rule = { class = "Alacritty" },
-      properties = { screen = 1, tag = "6" } },
+      properties = { screen = 1, tag = "1" } },
 
     { rule = { class = "steam" },
       properties = { screen = 1, tag = "7" } },
