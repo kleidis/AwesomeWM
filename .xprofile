@@ -1,4 +1,4 @@
-waypaper --restore &
+nitrogen --restore &
 /usr/lib/xfce-polkit/xfce-polkit &
 xrdb -merge ~/.Xresources &
 greenclip daemon &
