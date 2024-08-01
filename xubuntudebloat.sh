@@ -10,7 +10,7 @@ else
 fi
 
 # Install packages with apt
-sudo apt install qt6-style-kvantum xdg-desktop-portal-gtk thunar picom flameshot xclip polybar alacritty power-profiles-daemon gnome-disk-utility brightnessctl gvfs xdg-user-dirs blueman bluez eza  qt6ct udiskie  pamixer playerctl pavucontrol gnome-keyring lxrandr rofi fonts-font-awesome qt5-style-kvantum nitrogen starship -y
+sudo apt install mate-polkit qt6-style-kvantum xdg-desktop-portal-gtk thunar picom flameshot xclip polybar alacritty power-profiles-daemon gnome-disk-utility brightnessctl gvfs xdg-user-dirs blueman bluez eza  qt6ct udiskie  pamixer playerctl pavucontrol gnome-keyring lxrandr rofi fonts-font-awesome qt5-style-kvantum nitrogen starship -y
 
 echo "All packages have been installed."
 
