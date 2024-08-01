@@ -666,7 +666,11 @@ awful.rules.rules = {
     
     { rule = { class = "polkit-mate-authentication-agent-1" },
     properties = { screen = 1, tag = "nil", ontop = true,
-                     x=760, y=450, width = 400, height = 200, centered = true } },               
+                     x=760, y=450, width = 400, height = 200, centered = true } },
+                    
+    { rule = { class = "copyq" },
+    properties = { screen = 1, tag = "nil", ontop = true,
+                    centered = true } },                 
 }
 
 
